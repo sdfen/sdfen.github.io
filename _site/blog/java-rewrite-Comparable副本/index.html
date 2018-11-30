@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Java 经验法则12 考虑实现Comparable接口</title>
+    <meta name="keywords" content="androidjava排序comparable">
+    <meta name="description" content="对象排序时需要实现">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="App Hack" href="http://howedeng.github.io/feed.xml" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="http://howedeng.github.io/blog/java-rewrite-Comparable%E5%89%AF%E6%9C%AC/">
+
+    <!-- Modernizr -->
+    <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
+
+</head>
+
+
+<body>
+
+   <div class="header" style="background-image: url(/assets/img/password.jpg)">
+
+
+    <div class="container">
+        <div class="blur"></div>
+
+        <nav class="nav-collapse">
+            <ul class="noList">
+                
+                  
+                  
+                <li class="element first  ">
+                    <a href="/index.html">Home</a>
+                </li>
+                
+                  
+                  
+                <li class="element   ">
+                    <a href="/category_android">Android</a>
+                </li>
+                
+                  
+                  
+                <li class="element   ">
+                    <a href="/category_apple">Apple</a>
+                </li>
+                
+                  
+                  
+                <li class="element   last">
+                    <a href="/category_html">Html</a>
+                </li>
+                
+                <!-- <li> <a href="https://github.com/brianmaierjr/long-haul" target="_blank">GitHub</a></li> -->
+            </ul>
+        </nav>
+
+        <h2 class="logo"><a href="/">App Hack</a></h2>
+
+        <div class="post-title">
+            <h1 class="postTitle">Java 经验法则12 考虑实现Comparable接口</h1>
+            <p class="meta">2014-02-13
+               <!-- | <span class="time">0</span> Minute Read -->
+             </p>
+        </div>
+
+        <!--<h1 class="logo"><a href="/">App Hack</a></h1>-->
+
+    </div>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <div class="post">
+  <!---->
+    <!--<div class="featuredImage">-->
+        <!--<img src="/assets/img/password.jpg" alt="" />-->
+      <!--</div>-->
+  <!---->
+  <h1 class="postTitle">Java 经验法则12 考虑实现Comparable接口</h1>
+  <p class="meta">2014-02-13
+    <!-- | <span class="time">0</span> Minute Read -->
+  </p>
+
+  <p>Comparable的compareTo方法不但允许进行简单地等同性比较，而且允许执行顺序比较，除此之外，它与Object的equals方法具有相似的特征，它还是个泛型。类实现了Comparable接口，就表明它的实例具有内在的排序关系。</p>
+
+<p>一旦类实现了Comparable接口，它就可以跟许多泛型算法以及依赖于该接口的集合进行协作。你付出很小的努力就可以获得非常强大的功能。事实上，Java平台类库的所有值类都实现了该接口。如果你正在编写一个值类，它具有非常明显的内在排序关系，比如按字母顺序，按数值顺序或按年代顺序，那你就应该坚决考虑实现这个接口：</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;{</span>
+    <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">);</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>compareTo的通俗约定与equals相似：</p>
+
+<p>在下面说明中，符号sgn表示数学中的signum函数，它根据表达式的值为负值、零和正值，分别返回-1、0、1。</p>
+
+<ul>
+  <li>
+    <p>必须确保所有的x和y都满足sgn(x.compareTo(y)) == -sgn(y.compareTo(x))。这个也暗示着，如果y.compareTo(x)抛出异常时，那么x.compareTo(y)也必须抛出异常。</p>
+  </li>
+  <li>
+    <p>必须确保这个比较关系的可传递：(x.compareTo(y) &gt; 0 &amp;&amp; y.compareTo(z) &gt; 0) 意味着x.compareTo(z) &gt; 0。</p>
+  </li>
+  <li>
+    <p>必须确保x.compateTo(y) == 0 时，所有的z都满足：sgn(x.compareTo(z)) == sgn(y.compareTo(z))。</p>
+  </li>
+  <li>
+    <p>强烈建议(x.compareTo(y) == 0) == (x.equals(y)),但这并非绝对必要。一般说来任何实现了Comparable接口的类，若违反这个条件，都应该明确予以说明。推荐使用这样说法：注意，该类具有内在排序功能，但是与equals不一致</p>
+  </li>
+</ul>
+
+<p>编写compareTo方法与编写equals方法非常相似，但也存在几处重大的差别。因为Comparable接口是参数化的，而且comparable方法是静态的类型，因此不必进行类型检查，也不必对他的参数进行类型转换。如果参数类型不合适，这个调用甚至无法编译。如果参数为null，这个调用应该抛出NullPointerException异常，并且一旦该方法试图访问它的成员时就应该抛出。</p>
+
+<p>compareTo方法中的属性比较是顺序比较，而不是等同性的比较。比较对象引用属性可以是通过递归地调用compareTo方法实现。如果一个属性并没有实现Comparable接口，或者你需要使用一个非标准的排序关系，就可以使用一个显式的Comparator来代替。或者编写自己的Comparator，或者使用已有的Comparator，譬如针对第8条法则中CaseInsensitiveString类的这个compareTo方法使用一个已有的Compareator</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">CaseInsensitiveString</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">CaseInsensitiveString</span><span class="o">&gt;{</span>
+     
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">CaseInsensitiveString</span> <span class="n">cis</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">CASE_INSENSITIVE_ORDER</span><span class="o">.</span><span class="na">compare</span><span class="o">(</span><span class="n">s</span><span class="o">,</span><span class="n">cis</span><span class="o">.</span><span class="na">s</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>如果一个类有多个关键属性，那么你必须从最关键的属性开始，逐步进行到所有的重要属性。如果某个属性的比较产生了非零的结果（零表示相等），则整个比较操作结束，并返回该结果。</p>
+
+
+
+  <!-- POST NAVIGATION -->
+  <div class="postNav clearfix">
+    
+      <a class="prev image" href="/blog/java-rewrite-Comparable/"><span>&laquo;&nbsp;Java 经验法则12 考虑实现Comparable接口</span>
+      
+        <img src="/assets/img/password.jpg" alt="">
+      
+    </a>
+    
+    
+      <a class="next image" href="/blog/android-linearlayout-divider/"><span>Android LinearLayout 设置分割线divider&nbsp;&raquo;</span>
+      
+        <img src="/assets/img/password.jpg" alt="">
+      
+      </a>
+    
+  </div>
+</div>
+
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+   <div class="container">
+      <p class="copy">&copy; 2017 <a href="http://blog.apphack.cn">AppHack.</a> Powered by <a href="http://denghaojie.cn">Howe</a></p>
+
+      <div class="footer-links">
+         <ul class="noList">
+            
+            
+            
+            <li><a href="https://github.com/howedeng">
+                  <svg id="github" class="custom-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" style="height: 30px; width: 30px;"><circle class="outer-shape" cx="50" cy="50" r="48" style="opacity: 1;"></circle>
+                  <path class="inner-shape" style="opacity: 1;" transform="translate(25,25) scale(0.5)" d="M50,1C22.938,1,1,22.938,1,50s21.938,49,49,49s49-21.938,49-49S77.062,1,50,1z M79.099,79.099 c-3.782,3.782-8.184,6.75-13.083,8.823c-1.245,0.526-2.509,0.989-3.79,1.387v-7.344c0-3.86-1.324-6.699-3.972-8.517 c1.659-0.16,3.182-0.383,4.57-0.67c1.388-0.287,2.855-0.702,4.402-1.245c1.547-0.543,2.935-1.189,4.163-1.938 c1.228-0.75,2.409-1.723,3.541-2.919s2.082-2.552,2.847-4.067s1.372-3.334,1.818-5.455c0.446-2.121,0.67-4.458,0.67-7.01 c0-4.945-1.611-9.155-4.833-12.633c1.467-3.828,1.308-7.991-0.478-12.489l-1.197-0.143c-0.829-0.096-2.321,0.255-4.474,1.053 c-2.153,0.798-4.57,2.105-7.249,3.924c-3.797-1.053-7.736-1.579-11.82-1.579c-4.115,0-8.039,0.526-11.772,1.579 c-1.69-1.149-3.294-2.097-4.809-2.847c-1.515-0.75-2.727-1.26-3.637-1.532c-0.909-0.271-1.754-0.439-2.536-0.503 c-0.782-0.064-1.284-0.079-1.507-0.048c-0.223,0.031-0.383,0.064-0.478,0.096c-1.787,4.53-1.946,8.694-0.478,12.489 c-3.222,3.477-4.833,7.688-4.833,12.633c0,2.552,0.223,4.889,0.67,7.01c0.447,2.121,1.053,3.94,1.818,5.455 c0.765,1.515,1.715,2.871,2.847,4.067s2.313,2.169,3.541,2.919c1.228,0.751,2.616,1.396,4.163,1.938 c1.547,0.543,3.014,0.957,4.402,1.245c1.388,0.287,2.911,0.511,4.57,0.67c-2.616,1.787-3.924,4.626-3.924,8.517v7.487 c-1.445-0.43-2.869-0.938-4.268-1.53c-4.899-2.073-9.301-5.041-13.083-8.823c-3.782-3.782-6.75-8.184-8.823-13.083 C9.934,60.948,8.847,55.56,8.847,50s1.087-10.948,3.231-16.016c2.073-4.899,5.041-9.301,8.823-13.083s8.184-6.75,13.083-8.823 C39.052,9.934,44.44,8.847,50,8.847s10.948,1.087,16.016,3.231c4.9,2.073,9.301,5.041,13.083,8.823 c3.782,3.782,6.75,8.184,8.823,13.083c2.143,5.069,3.23,10.457,3.23,16.016s-1.087,10.948-3.231,16.016 C85.848,70.915,82.88,75.317,79.099,79.099L79.099,79.099z"></path>
+                  </svg>
+            </a></li>
+            
+            
+            <li><a href="mailto:howejee@gmail.com">
+                  <svg id="mail" class="custom-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" style="height: 30px; width: 30px;"><circle class="outer-shape" cx="50" cy="50" r="48" style="opacity: 1;"></circle>
+                  <path class="inner-shape" style="opacity: 1;" transform="translate(25,25) scale(0.5)" d="M50,1C22.938,1,1,22.938,1,50s21.938,49,49,49s49-21.938,49-49S77.062,1,50,1z M25.5,25.5h49 c0.874,0,1.723,0.188,2.502,0.542L50,57.544L22.998,26.041C23.777,25.687,24.626,25.499,25.5,25.5L25.5,25.5z M19.375,68.375v-36.75 c0-0.128,0.005-0.256,0.014-0.383l17.96,20.953L19.587,69.958C19.448,69.447,19.376,68.916,19.375,68.375L19.375,68.375z M74.5,74.5 h-49c-0.541,0-1.072-0.073-1.583-0.212l17.429-17.429L50,66.956l8.653-10.096l17.429,17.429C75.572,74.427,75.041,74.5,74.5,74.5 L74.5,74.5z M80.625,68.375c0,0.541-0.073,1.072-0.211,1.583L62.652,52.195l17.96-20.953c0.008,0.127,0.014,0.255,0.014,0.383 L80.625,68.375L80.625,68.375z"></path>
+                  </svg>
+            </a></li>
+            
+         </ul>
+      </div>
+   </div>
+</div><!-- end .footer -->
+
+   <!-- Add jQuery and other scripts -->
+<script src="/assets/js/jquery-1.11.2.min.js"></script>
+<!-- <script>window.jQuery || document.write('<script src=""><\/script>')</script> -->
+<script src="/assets/js/dropcap.min.js"></script>
+<script src="/assets/js/responsive-nav.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+
+
+</body>
+
+</html>

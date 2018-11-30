@@ -1,0 +1,107 @@
+<h4 id="section">一般子元素居中方法</h4>
+
+<p>Ps:宽度100%无效，对于position:absolute无效</p>
+
+<div style="width: 100%; height: 120px; padding: 10px; border: 2px solid black; margin:2em 0;">
+<div style="width: 100px; height: 100px; margin: 0 auto; background: blue;"></div>
+</div>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.child-element</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="section-1">绝对布局子元素居中方法1</h4>
+<p>Ps:只限于子元素宽度固定时才有效</p>
+
+<div style="width: 100%; height: 120px; padding: 10px; border: 2px solid black; position: relative; margin: 2em 0;">
+<div id="blueBox" style="width: 100px; height: 100px; margin: 0px auto; background-color: red; position: absolute; left: calc(50% - 50px); background-position: initial initial; background-repeat: initial initial;"></div>
+</div>
+<p><script type="text/javascript">
+function changeBlueBoxWidth() {
+var el = document.getElementById('blueBox');
+if(el.style.width == '100px'){
+  el.style.width = '200px';
+} else {
+  el.style.width = '100px';
+}
+}
+</script></p>
+<p>但当子元素宽度改变时，无法自适应：<a onclick="changeBlueBoxWidth();">点我改变宽度.</a></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.child-element</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">50%</span> <span class="n">-</span> <span class="m">50px</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="section-2">绝对布局子元素居中方法2(自适应居中)(推荐)</h4>
+<p>Ps:position:relative也可以使用</p>
+
+<div style="width: 100%; height: 200px; padding: 10px; border: 2px solid black; position: relative; margin: 2em 0;">
+<div id="vblueBox" style="padding: 0 10px; color: white; width:100px; height: auto; top: 50%; margin: 0 auto; background: green; position: absolute; left: 50%; -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%,-50%); -o-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%); ">
+我是绝对布局，我可以自适应水平垂直居中
+</div>
+</div>
+<p><script type="text/javascript">
+function verticallyCenterBlueBox() {
+var el = document.getElementById('vblueBox');
+if(el.style.width == '100px'){
+  el.style.width = '200px';
+} else {
+  el.style.width = '100px';
+}
+}
+</script></p>
+<p>现在当我们改变宽度时，也会自动居中： <a onclick="verticallyCenterBlueBox()">点我改变宽度</a>. </p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.child-element</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span><span class="m">-50%</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<div style="width: 100%; height: 200px; padding: 10px; border: 2px solid black; position: relative; margin: 2em 0;">
+<div id="v2blueBox" style="padding: 0 10px; color: black; width:100px; height: auto; top: 50%; background: orange; position: relative; left: 50%; -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%,-50%); -o-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%); ">
+我是相对布局，我可以自适应垂直水平居中
+</div>
+</div>
+<p><script type="text/javascript">
+function vertically2CenterBlueBox() {
+var el = document.getElementById('v2blueBox');
+if(el.style.width == '100px'){
+  el.style.width = '200px';
+} else {
+  el.style.width = '100px';
+}
+}
+</script></p>
+<p><a onclick="vertically2CenterBlueBox()">点我改变宽度</a>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.child-element</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span><span class="m">-50%</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="section-3">适配各浏览器</h4>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.child-element</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span><span class="m">-50%</span><span class="p">);</span>
+    <span class="nl">-ms-transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span><span class="m">-50%</span><span class="p">);</span> 	<span class="c">/* IE 9 */</span>
+    <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span><span class="m">-50%</span><span class="p">);</span> 	<span class="c">/* Firefox */</span>
+    <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span><span class="m">-50%</span><span class="p">);</span> <span class="c">/* Safari 和 Chrome */</span>
+    <span class="nl">-o-transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span><span class="m">-50%</span><span class="p">);</span> 	<span class="c">/* Opera */</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="joshbrotonhttpjoshbrotoncomabsolute-positioning-and-horizontal-vertical-centering">最后感谢大神:<a href="http://joshbroton.com/absolute-positioning-and-horizontal-vertical-centering/">joshbroton</a></h4>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Android hashcode() 和 equals()作用详解</title>
+    <meta name="keywords" content="androidequalshashcodeinstanceof">
+    <meta name="description" content="重写hashcode和equals方法来自定义对象比较方式">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="App Hack" href="http://howedeng.github.io/feed.xml" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="http://howedeng.github.io/blog/android-equals-hashcode/">
+
+    <!-- Modernizr -->
+    <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
+
+</head>
+
+
+<body>
+
+   <div class="header" style="background-image: url(/assets/img/password.jpg)">
+
+
+    <div class="container">
+        <div class="blur"></div>
+
+        <nav class="nav-collapse">
+            <ul class="noList">
+                
+                  
+                  
+                <li class="element first  ">
+                    <a href="/index.html">Home</a>
+                </li>
+                
+                  
+                  
+                <li class="element   ">
+                    <a href="/category_android">Android</a>
+                </li>
+                
+                  
+                  
+                <li class="element   ">
+                    <a href="/category_apple">Apple</a>
+                </li>
+                
+                  
+                  
+                <li class="element   last">
+                    <a href="/category_html">Html</a>
+                </li>
+                
+                <!-- <li> <a href="https://github.com/brianmaierjr/long-haul" target="_blank">GitHub</a></li> -->
+            </ul>
+        </nav>
+
+        <h2 class="logo"><a href="/">App Hack</a></h2>
+
+        <div class="post-title">
+            <h1 class="postTitle">Android hashcode() 和 equals()作用详解</h1>
+            <p class="meta">2013-09-21
+               <!-- | <span class="time">2</span> Minute Read -->
+             </p>
+        </div>
+
+        <!--<h1 class="logo"><a href="/">App Hack</a></h1>-->
+
+    </div>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <div class="post">
+  <!---->
+    <!--<div class="featuredImage">-->
+        <!--<img src="/assets/img/password.jpg" alt="" />-->
+      <!--</div>-->
+  <!---->
+  <h1 class="postTitle">Android hashcode() 和 equals()作用详解</h1>
+  <p class="meta">2013-09-21
+    <!-- | <span class="time">2</span> Minute Read -->
+  </p>
+
+  <h4 id="equals">equals()详解</h4>
+
+<h5 id="object">Object类中的定义</h5>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="o">);</span> 
+<span class="o">}</span></code></pre></figure>
+
+<p>很明显，equals默认是根据地址值（引用）来比较两对象，而Integer、String等类已经重写了Object类的equals()方法，所以可以进行内容的比较。</p>
+
+<h5 id="equals-1">equals方法重写原则</h5>
+
+<ul>
+  <li>自反性：x.equals(x)必定返回true</li>
+  <li>对称性：x.equals(y)为true,那么y.equals(x)也为true</li>
+  <li>传递性：x.equals(y)为true,y.equals(z)为true,那么x.equals(z)也为true</li>
+  <li>一致性：x.equals(y)为true,无论调用多少次都为true,所以equals方法不要依赖不可靠的资源 如通过ip地址判断URL的相等性</li>
+  <li>x.equals(null)必为false; x.equals(与x不同类型对象)，必为false</li>
+</ul>
+
+<h5 id="equals-2">编写高质量的equals方法步骤</h5>
+<ol>
+  <li>if(obj == this) return true； 高性能</li>
+  <li>instanceof 校验对象类型正确性</li>
+  <li>将参数转型到正确的类型</li>
+  <li>对类中的每一个重要的属性跟目标对象进行校验</li>
+  <li>针对实现验证是否对称，传递和一致</li>
+</ol>
+
+<h5 id="section">例子</h5>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">//1.引用一样，说明是同一个对象，就没必要执行下面判断</span>
+  <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>  
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="c1">//2.校验对象类型正确性，不一样就不用在比较下面的</span>
+  <span class="k">if</span> <span class="o">(!(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">ApplicationInfo</span><span class="o">))</span> <span class="o">{</span> 
+    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="c1">//3.将参数转型到正确的类型；</span>
+  <span class="n">ApplicationInfo</span> <span class="n">that</span> <span class="o">=</span> <span class="o">(</span><span class="n">ApplicationInfo</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span> 
+
+  <span class="c1">//对类中的每一个重要的属性跟目标对象进行校验</span>
+  <span class="k">return</span> <span class="n">title</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">that</span><span class="o">.</span><span class="na">title</span><span class="o">)</span> <span class="o">&amp;&amp;</span>
+      <span class="n">intent</span><span class="o">.</span><span class="na">getComponent</span><span class="o">().</span><span class="na">getClassName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span>
+                    <span class="n">that</span><span class="o">.</span><span class="na">intent</span><span class="o">.</span><span class="na">getComponent</span><span class="o">().</span><span class="na">getClassName</span><span class="o">());</span>
+<span class="o">}</span></code></pre></figure>
+
+<h4 id="hashcode">hashCode()详解</h4>
+<p>想要明白hashCode的作用，你必须要先知道Java中的集合。Java中的集合（Collection）有两类，一类是List，再有一类是Set。前者集合内的元素是有序的，元素可以重复；后者元素无序，但元素不可重复。这就存在一个问题：要想保证元素不重复，可两个元素是否重复应该依据什么来判断呢？这就用到上面的equals()方法，但是，如果每增加一个元素就检查一次，那么当元素很多时，后添加到集合中的元素比较的次数就非常多了。例如，如果集合中现在已经有1000个元素，那么第1001个元素加入集合时，它就要调用1000次equals方法。这显然会大大降低效率。因此就用到hashCode方法。</p>
+
+<p>hashCode方法返回的就是对象存储的物理地址(实际可能并不是)，这样，当集合添加新元素时，先调用这个元素的hashCode方法，就能一下子定位到它应该放置的位置上，如果这个位置上没有元素，它可以直接存储在这个位置上，不用再进行任何比较；但如果这位置上已经有元素，就会调用它的equals与新元素进行比较，相同就不存了，不相同就放置到其他位置上，这样就降低了检索时间，提高效率；</p>
+
+<h5 id="hashcode-1">hashCode()规定</h5>
+
+<ol>
+  <li>equals()相等的两个对象，hashCode()一定相等</li>
+  <li>hashCode()相等的两个对象，equals()不一定相等</li>
+</ol>
+
+<h5 id="section-1">例子</h5>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">//学生类，没有重写equals和hashCode</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Student</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">,</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>把对象添加到HashSet</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">HashSet</span> <span class="n">clazz</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">();</span>
+<span class="n">clazz</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Student</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="s">"Tony"</span><span class="o">));</span>
+<span class="n">clazz</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Student</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="s">"Jack"</span><span class="o">));</span>
+<span class="n">clazz</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Student</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="s">"Tony"</span><span class="o">));</span></code></pre></figure>
+
+<p>遍历clazz输出结果：</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="mi">1</span> <span class="o">:</span> <span class="n">Tony</span>
+<span class="mi">2</span> <span class="o">:</span> <span class="n">Jack</span>
+<span class="mi">1</span> <span class="o">:</span> <span class="n">Tony</span></code></pre></figure>
+
+<p>显然hashSet添加了相同的学生，hashCode()比较的是对象地址（引用），所以两个new出来的hasCode是不一样，当然此时equals也是不等的。接下来重写equals和hashcode：</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span><span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="o">){</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="k">if</span><span class="o">(!(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">Student</span><span class="o">)){</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="n">Student</span> <span class="n">that</span> <span class="o">=</span> <span class="o">(</span><span class="n">Student</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">==</span><span class="n">that</span><span class="o">.</span><span class="na">id</span> <span class="o">&amp;&amp;</span>
+         <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">that</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">id</span><span class="o">+</span><span class="n">name</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>输出结果：</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="mi">1</span> <span class="o">:</span> <span class="n">Tony</span>
+<span class="mi">2</span> <span class="o">:</span> <span class="n">Jack</span></code></pre></figure>
+
+<h4 id="section-2">完…</h4>
+
+
+
+  <!-- POST NAVIGATION -->
+  <div class="postNav clearfix">
+    
+      <a class="prev image" href="/blog/android-edittext-password-show-hide/"><span>&laquo;&nbsp;Android EditText设置密码可见性</span>
+      
+        <img src="/assets/img/password.jpg" alt="">
+      
+    </a>
+    
+    
+      <a class="next image" href="/blog/android-custom-layout-attrs/"><span>Android 自定义布局属性&nbsp;&raquo;</span>
+      
+        <img src="/assets/img/password.jpg" alt="">
+      
+      </a>
+    
+  </div>
+</div>
+
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+   <div class="container">
+      <p class="copy">&copy; 2017 <a href="http://blog.apphack.cn">AppHack.</a> Powered by <a href="http://denghaojie.cn">Howe</a></p>
+
+      <div class="footer-links">
+         <ul class="noList">
+            
+            
+            
+            <li><a href="https://github.com/howedeng">
+                  <svg id="github" class="custom-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" style="height: 30px; width: 30px;"><circle class="outer-shape" cx="50" cy="50" r="48" style="opacity: 1;"></circle>
+                  <path class="inner-shape" style="opacity: 1;" transform="translate(25,25) scale(0.5)" d="M50,1C22.938,1,1,22.938,1,50s21.938,49,49,49s49-21.938,49-49S77.062,1,50,1z M79.099,79.099 c-3.782,3.782-8.184,6.75-13.083,8.823c-1.245,0.526-2.509,0.989-3.79,1.387v-7.344c0-3.86-1.324-6.699-3.972-8.517 c1.659-0.16,3.182-0.383,4.57-0.67c1.388-0.287,2.855-0.702,4.402-1.245c1.547-0.543,2.935-1.189,4.163-1.938 c1.228-0.75,2.409-1.723,3.541-2.919s2.082-2.552,2.847-4.067s1.372-3.334,1.818-5.455c0.446-2.121,0.67-4.458,0.67-7.01 c0-4.945-1.611-9.155-4.833-12.633c1.467-3.828,1.308-7.991-0.478-12.489l-1.197-0.143c-0.829-0.096-2.321,0.255-4.474,1.053 c-2.153,0.798-4.57,2.105-7.249,3.924c-3.797-1.053-7.736-1.579-11.82-1.579c-4.115,0-8.039,0.526-11.772,1.579 c-1.69-1.149-3.294-2.097-4.809-2.847c-1.515-0.75-2.727-1.26-3.637-1.532c-0.909-0.271-1.754-0.439-2.536-0.503 c-0.782-0.064-1.284-0.079-1.507-0.048c-0.223,0.031-0.383,0.064-0.478,0.096c-1.787,4.53-1.946,8.694-0.478,12.489 c-3.222,3.477-4.833,7.688-4.833,12.633c0,2.552,0.223,4.889,0.67,7.01c0.447,2.121,1.053,3.94,1.818,5.455 c0.765,1.515,1.715,2.871,2.847,4.067s2.313,2.169,3.541,2.919c1.228,0.751,2.616,1.396,4.163,1.938 c1.547,0.543,3.014,0.957,4.402,1.245c1.388,0.287,2.911,0.511,4.57,0.67c-2.616,1.787-3.924,4.626-3.924,8.517v7.487 c-1.445-0.43-2.869-0.938-4.268-1.53c-4.899-2.073-9.301-5.041-13.083-8.823c-3.782-3.782-6.75-8.184-8.823-13.083 C9.934,60.948,8.847,55.56,8.847,50s1.087-10.948,3.231-16.016c2.073-4.899,5.041-9.301,8.823-13.083s8.184-6.75,13.083-8.823 C39.052,9.934,44.44,8.847,50,8.847s10.948,1.087,16.016,3.231c4.9,2.073,9.301,5.041,13.083,8.823 c3.782,3.782,6.75,8.184,8.823,13.083c2.143,5.069,3.23,10.457,3.23,16.016s-1.087,10.948-3.231,16.016 C85.848,70.915,82.88,75.317,79.099,79.099L79.099,79.099z"></path>
+                  </svg>
+            </a></li>
+            
+            
+            <li><a href="mailto:howejee@gmail.com">
+                  <svg id="mail" class="custom-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" style="height: 30px; width: 30px;"><circle class="outer-shape" cx="50" cy="50" r="48" style="opacity: 1;"></circle>
+                  <path class="inner-shape" style="opacity: 1;" transform="translate(25,25) scale(0.5)" d="M50,1C22.938,1,1,22.938,1,50s21.938,49,49,49s49-21.938,49-49S77.062,1,50,1z M25.5,25.5h49 c0.874,0,1.723,0.188,2.502,0.542L50,57.544L22.998,26.041C23.777,25.687,24.626,25.499,25.5,25.5L25.5,25.5z M19.375,68.375v-36.75 c0-0.128,0.005-0.256,0.014-0.383l17.96,20.953L19.587,69.958C19.448,69.447,19.376,68.916,19.375,68.375L19.375,68.375z M74.5,74.5 h-49c-0.541,0-1.072-0.073-1.583-0.212l17.429-17.429L50,66.956l8.653-10.096l17.429,17.429C75.572,74.427,75.041,74.5,74.5,74.5 L74.5,74.5z M80.625,68.375c0,0.541-0.073,1.072-0.211,1.583L62.652,52.195l17.96-20.953c0.008,0.127,0.014,0.255,0.014,0.383 L80.625,68.375L80.625,68.375z"></path>
+                  </svg>
+            </a></li>
+            
+         </ul>
+      </div>
+   </div>
+</div><!-- end .footer -->
+
+   <!-- Add jQuery and other scripts -->
+<script src="/assets/js/jquery-1.11.2.min.js"></script>
+<!-- <script>window.jQuery || document.write('<script src=""><\/script>')</script> -->
+<script src="/assets/js/dropcap.min.js"></script>
+<script src="/assets/js/responsive-nav.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+
+
+</body>
+
+</html>

@@ -1,1 +1,31 @@
-theme: jekyll-theme-hacker
+title: App Hack
+description: Android / IOS
+
+url: http://howedeng.github.io
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+markdown: kramdown
+highlighter: rouge
+gems: [jekyll-paginate]
+paginate: 10
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: Android
+   url: /category_android
+ - title: Apple
+   url: /category_apple
+ - title: Html
+   url: /category_html
+
+social:
+   github: howedeng
+  #  twitter: brianmaierjr
+  #  facebook: brianmaierjr
+   email: howejee@gmail.com
+
+google_analytics: "UA-58263416-1"
+date_format: "%Y-%m-%d"

@@ -1,0 +1,34 @@
+<h4 id="section">问题</h4>
+
+<p>2.3及以下的系统版本在解析json数据时发现报 10-12 02:36:35.964: W/System.err(323): <code class="highlighter-rouge">org.json.JSONException: Value of type java.lang.String cannot be converted to JSONObject</code> 错误。</p>
+
+<h4 id="section-1">原因</h4>
+<p>当UTF-8编码带有bom头时，json无法解析</p>
+
+<h4 id="section-2">解决</h4>
+<p>##### 方法一
+服务器返回json时，编码utf-8不要带bom</p>
+
+<h5 id="section-3">方法二</h5>
+<p>对比android4.0的json包</p>
+
+<p>4.0 代码</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">JSONTokener</span><span class="o">(</span><span class="n">String</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// consume an optional byte order mark (BOM) if it exists</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">in</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">in</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">"ufeff"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="n">in</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="k">this</span><span class="o">.</span><span class="na">in</span> <span class="o">=</span> <span class="n">in</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>而2.3的代码</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">JSONTokener</span><span class="o">(</span><span class="n">String</span> <span class="n">in</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">is</span><span class="o">.</span><span class="na">in</span> <span class="o">=</span> <span class="n">in</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>问题很简单了在解析前将String过滤一下就ok。</p>
+
+<h4 id="section-4">完…</h4>
+

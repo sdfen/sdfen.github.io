@@ -1,0 +1,58 @@
+<h4 id="resvaluesattrsxml">新建/res/values/attrs.xml</h4>
+<p>这里给一个CircleImageView的控件设置几个自定义属性</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;resources&gt;</span>
+  <span class="nt">&lt;declare-styleable</span> <span class="na">name=</span><span class="s">"CircleImageView"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;attr</span> <span class="na">name=</span><span class="s">"borderWidth"</span> <span class="na">format=</span><span class="s">"dimension"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;attr</span> <span class="na">name=</span><span class="s">"borderColor"</span> <span class="na">format=</span><span class="s">"color"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;attr</span> <span class="na">name=</span><span class="s">"cornersRadius"</span> <span class="na">format=</span><span class="s">"dimension"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/declare-styleable&gt;</span>
+<span class="nt">&lt;/resources&gt;</span></code></pre></figure>
+
+<p>format可定义数据类型</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">reference   //引用资源
+color       //颜色值
+boolean     //布尔值
+dimension   //尺寸值
+float       //浮点型
+integer     //整型
+string      //字符串
+fraction    //百分数
+enum        //枚举类型
+flag        //位或运算</code></pre></figure>
+
+<h4 id="section">在布局文件里使用</h4>
+<p>先声明命名空间 xmlns:attribute=”http://schemas.android.com/apk/res/<app包名>" 或者 xmlns:attribute="http://schemas.android.com/apk/res-auto",其中attribute可以取除android以外任何字符串</app包名></p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;cn.apphack.test.CircleImageView</span> 
+  <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">xmlns:apphack=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+  <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+  <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+  <span class="na">apphack:borderWidth=</span><span class="s">"1dp"</span>
+  <span class="na">apphack:borderColor=</span><span class="s">"#ff0000"</span>
+  <span class="na">apphack:cornersRadius=</span><span class="s">"20dp"</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<h4 id="section-1">代码里获取属性值</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">CircleImageView</span> <span class="kd">extends</span> <span class="n">ImageView</span><span class="o">{</span>
+  <span class="o">...</span>
+  <span class="kd">public</span> <span class="nf">CircleImageView</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AttributeSet</span> <span class="n">attrs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">attrs</span><span class="o">);</span>
+    <span class="n">TypedArray</span> <span class="n">a</span> <span class="o">=</span>
+        <span class="n">context</span><span class="o">.</span><span class="na">obtainStyledAttributes</span><span class="o">(</span><span class="n">attrs</span><span class="o">,</span><span class="n">R</span><span class="o">.</span><span class="na">styleable</span><span class="o">.</span><span class="na">CircleImageView</span><span class="o">);</span>
+    <span class="n">mBorderWidth</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">getDimensionPixelSize</span><span class="o">(</span>
+        <span class="n">R</span><span class="o">.</span><span class="na">styleable</span><span class="o">.</span><span class="na">CircleImageView_borderWidth</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="n">mBorderColor</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span>
+        <span class="n">R</span><span class="o">.</span><span class="na">styleable</span><span class="o">.</span><span class="na">CircleImageView_borderColor</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
+    <span class="n">mCornersRadius</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">getDimensionPixelSize</span><span class="o">(</span>
+        <span class="n">R</span><span class="o">.</span><span class="na">styleable</span><span class="o">.</span><span class="na">CircleImageView_cornersRadius</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+    <span class="n">a</span><span class="o">.</span><span class="na">recycle</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h4 id="section-2">完…</h4>
+

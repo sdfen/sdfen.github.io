@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App Hack</title>
+    <description>Android / IOS</description>
+    <link>http://howedeng.github.io/</link>
+    <atom:link href="http://howedeng.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 14 Jan 2017 23:32:56 +0800</pubDate>
+    <lastBuildDate>Sat, 14 Jan 2017 23:32:56 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      
+      <item>
+        <title>html5通过css3实现marquee效果</title>
+        <description>&lt;h4 id=&quot;css3marquee&quot;&gt;css3实现marquee效果&lt;/h4&gt;
+&lt;style&gt;
+.marquee {
+  width: 100%;
+  padding: 0.5em 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f6f6f6;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: left;
+}
+
+.marquee p:after {
+  content: &quot;&quot;;
+  white-space: nowrap;
+  padding-right: 50px;
+}
+
+.marquee p {
+  margin: 0;
+  padding-left: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  -webkit-animation-name: marquee;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: marquee;
+  -moz-animation-timing-function: linear;
+  -moz-animation-duration: 10s;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-name: marquee;
+  -ms-animation-timing-function: linear;
+  -ms-animation-duration: 10s;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-name: marquee;
+  -o-animation-timing-function: linear;
+  -o-animation-duration: 10s;
+  -o-animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  text-align: left;
+}
+
+@-webkit-keyframes marquee {
+  from {
+    -webkit-transform: translate(0);
+  }
+
+  to {
+    -webkit-transform: translate(-150%);
+  }
+}
+
+@-moz-keyframes marquee {
+  from {
+    -moz-transform: translate(0);
+  }
+
+  to {
+    -moz-transform: translate(-150%);
+  }
+}
+
+@-ms-keyframes marquee {
+  from {
+    -ms-transform: translate(0);
+  }
+
+  to {  
+    -ms-transform: translate(-150%);
+  }
+}
+
+@-o-keyframes marquee {
+  from {
+    -o-transform: translate(0);
+  }
+
+  to {
+    -o-transform: translate(-150%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(-150%);
+  }
+}
+&lt;/style&gt;
+
+&lt;div class=&quot;marquee&quot;&gt;
+&lt;p&gt;欢迎来到App Hack.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;html&quot;&gt;html写法&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;marquee&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;欢迎来到App Hack.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;css&quot;&gt;css写法&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.marquee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;600px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.5em&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;hidden&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#f6f6f6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.marquee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nowrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.marquee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;600px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inline-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nowrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-webkit-animation-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-webkit-animation-timing-function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-webkit-animation-duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-webkit-animation-iteration-count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;infinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-moz-animation-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-moz-animation-timing-function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-moz-animation-duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-moz-animation-iteration-count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;infinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-ms-animation-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-ms-animation-timing-function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-ms-animation-duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-ms-animation-iteration-count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;infinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-o-animation-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-o-animation-timing-function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-o-animation-duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-o-animation-iteration-count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;infinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;animation-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;animation-timing-function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;animation-duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;animation-iteration-count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;infinite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@-webkit-keyframes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;from&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;99&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@-moz-keyframes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;from&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;-moz-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;99&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;-moz-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@-ms-keyframes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;from&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;-ms-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;99&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;-ms-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@-o-keyframes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;from&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;-o-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;99&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;-o-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@keyframes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;marquee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;from&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;99&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        
+          <description>&lt;h4 id=&quot;css3marquee&quot;&gt;css3实现marquee效果&lt;/h4&gt;
+&lt;style&gt;
+.marquee {
+  width: 100%;
+  padding: 0.5em 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f6f6f6;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: left;
+}
+
+&lt;/style&gt;
+</description>
+        
+        <pubDate>Mon, 01 Aug 2016 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/html5-css3-realize-marquee/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/html5-css3-realize-marquee/</guid>
+        
+        <category>css</category>
+        
+        <category>marquee</category>
+        
+        <category>html</category>
+        
+        
+        <category>html</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>ios html5添加图标到主屏幕</title>
+        <description>&lt;h4 id=&quot;safari&quot;&gt;设配屏幕大小并且去掉safari的地址栏，状态栏&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width,
+		initial-scale=1,maximum-scale=1,user-scalable=no&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-mobile-web-app-capable&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;yes&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-mobile-web-app-status-bar-style&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;black&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;format-detection&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;telephone=no&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;设置添加到主屏幕的图标&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;apple-touch-icon&lt;/code&gt; 与 &lt;code class=&quot;highlighter-rouge&quot;&gt;apple-touch-icon-precomposed&lt;/code&gt;都可以设置图标，那么，多出来的&lt;code class=&quot;highlighter-rouge&quot;&gt;precomposed&lt;/code&gt; 表示神马意思呢？没有&lt;code class=&quot;highlighter-rouge&quot;&gt;precomposed&lt;/code&gt; 代码，一些包括圆角，阴影，反光的特效便会自动添加到生成的本地app 的logo 中。是自iOS 2.0 开始的，但如今随着iOS7 的出现，已经变得可有可无了;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/homescreen-icon.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 自定义各种尺寸图标 ,这里偷懒一下就用一张 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-icon-precomposed&quot;&lt;/span&gt; 
+      &lt;span class=&quot;na&quot;&gt;sizes=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;144x144&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/icon.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-icon-precomposed&quot;&lt;/span&gt; 
+      &lt;span class=&quot;na&quot;&gt;sizes=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;114x114&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/icon.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-icon-precomposed&quot;&lt;/span&gt; 
+      &lt;span class=&quot;na&quot;&gt;sizes=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;72x72&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/icon.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-icon-precomposed&quot;&lt;/span&gt; 
+      &lt;span class=&quot;na&quot;&gt;sizes=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;57x57&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/icon.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;设置启动页&lt;/h4&gt;
+&lt;p&gt;目前在ios9上还无法显示，具体原因还没找到。如果你知道解决方法，劳烦告诉一下我，多谢！&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 添加启动页 ios9暂无法显示 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iPhone --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/splash-320x460.png&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 320px) and (device-height: 480px) 
+          and (-webkit-device-pixel-ratio: 1)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iPhone (Retina) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/splash-640x920.png&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 320px) and (device-height: 480px) 
+          and (-webkit-device-pixel-ratio: 2)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iPhone 5 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/splash-640x1096.png&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 320px) and (device-height: 568px) 
+          and (-webkit-device-pixel-ratio: 2)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iOS 8 iPhone 6 (portrait) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/splash-750x1294.png&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 375px) and (device-height: 667px) 
+          and (orientation: portrait) 
+          and (-webkit-device-pixel-ratio: 2)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iOS 8 iPhone 6 (landscape) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/splash-710x1334.jpg&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 375px) and (device-height: 667px) 
+          and (orientation: landscape) 
+          and (-webkit-device-pixel-ratio: 2)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iOS 8 iPhone 6 Plus (portrait) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/splash-1242x2148.jpg&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 414px) and (device-height: 736px) 
+      	  and (orientation: portrait) 
+      	  and (-webkit-device-pixel-ratio: 3)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iOS 8 iPhone 6 Plus (landscape) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;imgs/splash-1182x2208.jpg&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 414px) and (device-height: 736px) 
+          and (orientation: landscape) 
+          and (-webkit-device-pixel-ratio: 3)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iPad (portrait) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image-768x1004.png&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 768px) and (device-height: 1024px)
+         and (orientation: portrait)
+         and (-webkit-device-pixel-ratio: 1)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iPad (landscape) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image-748x1024.png&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 768px) and (device-height: 1024px)
+         and (orientation: landscape)
+         and (-webkit-device-pixel-ratio: 1)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iPad (Retina, portrait) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image-1536x2008.png&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 768px) and (device-height: 1024px)
+         and (orientation: portrait)
+         and (-webkit-device-pixel-ratio: 2)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- iPad (Retina, landscape) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image-1496x2048.png&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(device-width: 768px) and (device-height: 1024px)
+         and (orientation: landscape)
+         and (-webkit-device-pixel-ratio: 2)&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-touch-startup-image&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;弹出添加到主屏幕提示&lt;/h4&gt;
+&lt;p&gt;这里用到了第三方插件&lt;a href=&quot;http://cubiq.org/add-to-home-screen&quot;&gt;cubiq/add-to-home-screen&lt;/a&gt;,支持android、ios。详细用法自己去查看，以下只是在ios上简单的使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/add-to-homescreen-tips.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 添加提示插件 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; 
+    &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;addToHomescreen/css/addtohomescreen.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;addToHomescreen/js/addtohomescreen.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;清除&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;每次都弹出提示&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;addToHomescreen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;addToHomescreen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;demo&quot;&gt;最后提供个DEMO以作参考&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/howedeng/safari-add-to-homescreen&quot;&gt;查看DEMO项目&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+          <description>&lt;h4 id=&quot;safari&quot;&gt;设配屏幕大小并且去掉safari的地址栏，状态栏&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width,
+		initial-scale=1,maximum-scale=1,user-scalable=no&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-mobile-web-app-capable&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;yes&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;apple-mobile-web-app-status-bar-style&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;black&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;format-detection&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;telephone=no&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        
+        <pubDate>Thu, 28 Jul 2016 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/safari-add-icon-to-homescreen/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/safari-add-icon-to-homescreen/</guid>
+        
+        <category>ios</category>
+        
+        <category>add-to-homescreen</category>
+        
+        <category>html5</category>
+        
+        
+        <category>apple</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>html/css 通用布局水平垂直居中方法</title>
+        <description>&lt;h4 id=&quot;section&quot;&gt;一般子元素居中方法&lt;/h4&gt;
+
+&lt;p&gt;Ps:宽度100%无效，对于position:absolute无效&lt;/p&gt;
+
+&lt;div style=&quot;width: 100%; height: 120px; padding: 10px; border: 2px solid black; margin:2em 0;&quot;&gt;
+&lt;div style=&quot;width: 100px; height: 100px; margin: 0 auto; background: blue;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.child-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;绝对布局子元素居中方法1&lt;/h4&gt;
+&lt;p&gt;Ps:只限于子元素宽度固定时才有效&lt;/p&gt;
+
+&lt;div style=&quot;width: 100%; height: 120px; padding: 10px; border: 2px solid black; position: relative; margin: 2em 0;&quot;&gt;
+&lt;div id=&quot;blueBox&quot; style=&quot;width: 100px; height: 100px; margin: 0px auto; background-color: red; position: absolute; left: calc(50% - 50px); background-position: initial initial; background-repeat: initial initial;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+function changeBlueBoxWidth() {
+var el = document.getElementById(&#39;blueBox&#39;);
+if(el.style.width == &#39;100px&#39;){
+  el.style.width = &#39;200px&#39;;
+} else {
+  el.style.width = &#39;100px&#39;;
+}
+}
+&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;但当子元素宽度改变时，无法自适应：&lt;a onclick=&quot;changeBlueBoxWidth();&quot;&gt;点我改变宽度.&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.child-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;绝对布局子元素居中方法2(自适应居中)(推荐)&lt;/h4&gt;
+&lt;p&gt;Ps:position:relative也可以使用&lt;/p&gt;
+
+&lt;div style=&quot;width: 100%; height: 200px; padding: 10px; border: 2px solid black; position: relative; margin: 2em 0;&quot;&gt;
+&lt;div id=&quot;vblueBox&quot; style=&quot;padding: 0 10px; color: white; width:100px; height: auto; top: 50%; margin: 0 auto; background: green; position: absolute; left: 50%; -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%,-50%); -o-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%); &quot;&gt;
+我是绝对布局，我可以自适应水平垂直居中
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+function verticallyCenterBlueBox() {
+var el = document.getElementById(&#39;vblueBox&#39;);
+if(el.style.width == &#39;100px&#39;){
+  el.style.width = &#39;200px&#39;;
+} else {
+  el.style.width = &#39;100px&#39;;
+}
+}
+&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;现在当我们改变宽度时，也会自动居中： &lt;a onclick=&quot;verticallyCenterBlueBox()&quot;&gt;点我改变宽度&lt;/a&gt;. &lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.child-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;div style=&quot;width: 100%; height: 200px; padding: 10px; border: 2px solid black; position: relative; margin: 2em 0;&quot;&gt;
+&lt;div id=&quot;v2blueBox&quot; style=&quot;padding: 0 10px; color: black; width:100px; height: auto; top: 50%; background: orange; position: relative; left: 50%; -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%,-50%); -o-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%); &quot;&gt;
+我是相对布局，我可以自适应垂直水平居中
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+function vertically2CenterBlueBox() {
+var el = document.getElementById(&#39;v2blueBox&#39;);
+if(el.style.width == &#39;100px&#39;){
+  el.style.width = &#39;200px&#39;;
+} else {
+  el.style.width = &#39;100px&#39;;
+}
+}
+&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a onclick=&quot;vertically2CenterBlueBox()&quot;&gt;点我改变宽度&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.child-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;适配各浏览器&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.child-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;-ms-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 	&lt;span class=&quot;c&quot;&gt;/* IE 9 */&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;-moz-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 	&lt;span class=&quot;c&quot;&gt;/* Firefox */&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;-webkit-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* Safari 和 Chrome */&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;-o-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 	&lt;span class=&quot;c&quot;&gt;/* Opera */&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;joshbrotonhttpjoshbrotoncomabsolute-positioning-and-horizontal-vertical-centering&quot;&gt;最后感谢大神:&lt;a href=&quot;http://joshbroton.com/absolute-positioning-and-horizontal-vertical-centering/&quot;&gt;joshbroton&lt;/a&gt;&lt;/h4&gt;
+</description>
+        
+          <description>&lt;h4 id=&quot;section&quot;&gt;一般子元素居中方法&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Tue, 26 Jul 2016 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/css-position-absolute-center/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/css-position-absolute-center/</guid>
+        
+        <category>position</category>
+        
+        <category>absolute</category>
+        
+        <category>center</category>
+        
+        <category>horizontal</category>
+        
+        <category>vertical</category>
+        
+        <category>html5</category>
+        
+        <category>css3</category>
+        
+        <category>javascript</category>
+        
+        
+        <category>html</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Android Color(int)值与hexa(字符串)相互转换</title>
+        <description>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//color 值转 hexa 字符串&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#%06X&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xFFFFFF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//hexa 字符串转 color 值&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;parseColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#87CEFA&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        
+          <description>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//color 值转 hexa 字符串&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#%06X&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xFFFFFF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//hexa 字符串转 color 值&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;parseColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#87CEFA&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        
+        <pubDate>Mon, 08 Jun 2015 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/android-color-hexa/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/android-color-hexa/</guid>
+        
+        <category>android</category>
+        
+        <category>color</category>
+        
+        <category>hexa</category>
+        
+        
+        <category>android</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>PHP 用星号替换手机号码中间4位</title>
+        <description>&lt;p&gt;直接用substr_replace替换&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$num = &quot;13966778888&quot;
+$str = substr_replace($num,&#39;****&#39;,3,4);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;通过正则替换&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;function hidtel($phone){
+    $IsWhat = preg_match(&#39;/(0[0-9]{2,3}[-]?[2-9][0-9]{6,7}[-]?[0-9]?)/i&#39;,$phone); //固定电话
+    if($IsWhat == 1){
+        return preg_replace(&#39;/(0[0-9]{2,3}[-]?[2-9])[0-9]{3,4}([0-9]{3}[-]?[0-9]?)/i&#39;,&#39;$1****$2&#39;,$phone);
+    }else{
+        return  preg_replace(&#39;/(1[358]{1}[0-9])[0-9]{4}([0-9]{4})/i&#39;,&#39;$1****$2&#39;,$phone);
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        
+          <description>&lt;p&gt;直接用substr_replace替换&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 15 Feb 2015 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/php-phone-num-star/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/php-phone-num-star/</guid>
+        
+        <category>php</category>
+        
+        <category>substr_replace</category>
+        
+        <category>preg_match</category>
+        
+        
+        <category>php</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>PHP 生成唯一标识id</title>
+        <description>&lt;p&gt;PHP倒是自带了生成唯一id的函数：uniqid() ，它是基于当前时间微秒数的&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;echo uniqid(); //13位的字符串
+echo uniqid(&quot;php_&quot;); //当然你可以加上前缀
+echo uniqid(&quot;php_&quot;, TRUE); //如果第二个参数more_entropy为true则生成23位字符串&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;但是它生成的标识有可能不是唯一的，所以很多人会&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;//这是第一种简单的方法,当然用sha1()函数也可以。
+echo md5(uniqid());
+//第二种，利用时间戳的方法
+echo md5(time().mt_rand(1,1000000));&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果你还担心，可以用更严谨的方法&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;function create_unique() {   
+    $data = $_SERVER[&#39;HTTP_USER_AGENT&#39;] . $_SERVER[&#39;REMOTE_ADDR&#39;]   
+    .time() . rand();   
+    return sha1($data);   
+    //return md5(time().$data);
+}  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        
+          <description>&lt;p&gt;PHP倒是自带了生成唯一id的函数：uniqid() ，它是基于当前时间微秒数的&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 15 Feb 2015 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/php-create-unique/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/php-create-unique/</guid>
+        
+        <category>php</category>
+        
+        <category>uniqid</category>
+        
+        <category>md5</category>
+        
+        
+        <category>php</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>PHP 定义一个空Json对象</title>
+        <description>&lt;p&gt;在写接口的过程当中，手机端有需求当没有数据时返回一个空对象。&lt;/p&gt;
+
+&lt;p&gt;一般我们会这样做&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$result=array();
+echo json_encode($result);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;但是得到的结果会是一个空数组，很正常，array就是定义数组嘛…&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;其实很简单，只要强制转换即可。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;$result=(object)array();
+//或者
+//$result=(object)null;
+ 
+echo json_encode($result);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;返回结果&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+</description>
+        
+          <description>&lt;p&gt;在写接口的过程当中，手机端有需求当没有数据时返回一个空对象。&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 14 Feb 2015 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/php-empty-json-object/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/php-empty-json-object/</guid>
+        
+        <category>php</category>
+        
+        <category>object</category>
+        
+        <category>json</category>
+        
+        <category>array</category>
+        
+        <category>json_encode</category>
+        
+        
+        <category>php</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>获取优酷视频M3u8文件</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;网上有很多获取优酷真实视频地址的方法，不是失效了，就是很快就被封了，以下方法模拟youku网页方式获取真实地址，十分稳定(2016/12改)&lt;/p&gt;
+
+&lt;h2 id=&quot;id&quot;&gt;获取优酷视频链接或者ID&lt;/h2&gt;
+&lt;p&gt;e.g&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http://v.youku.com/v_show/id_XNjQyNjE3MjY4.html&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;XNjQyNjE3MjY4 就是相应地Id,至于怎样获取看你们自己了&lt;/p&gt;
+
+&lt;h2 id=&quot;m3u8&quot;&gt;获取M3U8文件&lt;/h2&gt;
+&lt;p&gt;创建后台WebView来跟踪上面的链接以获取M3U8文件&lt;/p&gt;
+
+&lt;p&gt;设置WebSettings&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;WebSettings&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSettings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+ 
+&lt;span class=&quot;c1&quot;&gt;// 支持javascript&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setJavaScriptEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+&lt;span class=&quot;c1&quot;&gt;// 支持localstorage和essionStorage&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDomStorageEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+&lt;span class=&quot;c1&quot;&gt;// 开启应用缓存&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAppCacheEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cacheDir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getApplicationContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cache&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MODE_PRIVATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAppCachePath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cacheDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCacheMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebSettings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LOAD_DEFAULT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+&lt;span class=&quot;c1&quot;&gt;// 设置缓冲大小&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAppCacheMaxSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAllowFileAccess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setUserAgentString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D5145e Safari/9537.53&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;设置WebViewClient&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebViewClient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+ 
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onPageFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WebView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+ 
+        &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadUrl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;javascript:window.js_method.showSource&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                            &lt;span class=&quot;s&quot;&gt;&quot;(document.getElementsByTagName(&#39;video&#39;)[0].src);&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onPageFinished&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ 
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;添加addJavascriptInterface&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addJavascriptInterface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InJavaScriptLocalObj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;js_method&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;InJavaScriptLocalObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@JavascriptInterface&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;showSource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contains&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;type=flv&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;type=flv&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;type=mp4&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contains&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;type=mp4&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;amp;type=mp4&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;html5url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//这个就是M3U8文件地址&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sendMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ 
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;剩下的就是读取m3u8文件并解析成一个视频地址列表，按次序播放，该方法ios通用&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pan.baidu.com/share/init?shareid=88167913&amp;amp;uk=3040070900&quot;&gt;DEMO&lt;/a&gt;(k8pr)&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;网上有很多获取优酷真实视频地址的方法，不是失效了，就是很快就被封了，以下方法模拟youku网页方式获取真实地址，十分稳定(2016/12改)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 25 Jan 2015 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/android-youku-m3u8/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/android-youku-m3u8/</guid>
+        
+        <category>android</category>
+        
+        <category>ios</category>
+        
+        <category>m3u8</category>
+        
+        <category>youku</category>
+        
+        <category>WebView</category>
+        
+        <category>video</category>
+        
+        
+        <category>android</category>
+        
+        <category>apple</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Android RecyclerView 滑动到最后加载更多</title>
+        <description>&lt;p&gt;很简单，监听一下OnScrollListener，以横向滑动为例&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;mRecycleView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnScrollListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnScrollListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//用来标记是否正在向最后一个滑动，既是否向右滑动或向下滑动&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isSlidingToLast&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+ 
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onScrollStateChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;LinearLayoutManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LinearLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 当不滚动时&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SCROLL_STATE_IDLE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//获取最后一个完全显示的ItemPosition&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lastVisibleItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findLastCompletelyVisibleItemPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;totalItemCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getItemCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+ 
+            &lt;span class=&quot;c1&quot;&gt;// 判断是否滚动到底部，并且是向右滚动&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lastVisibleItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;totalItemCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isSlidingToLast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//加载更多功能的代码&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Ln&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;howes right=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findLastCompletelyVisibleItemPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getActivityContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;加载更多&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ 
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onScrolled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onScrolled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//dx用来判断横向滑动方向，dy用来判断纵向滑动方向&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//大于0表示，正在向右滚动&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;isSlidingToLast&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//小于等于0 表示停止或向左滚动&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;isSlidingToLast&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ 
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        
+          <description>&lt;p&gt;很简单，监听一下OnScrollListener，以横向滑动为例&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 18 Jan 2015 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/android-recyclerview-scroll-end-load-more/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/android-recyclerview-scroll-end-load-more/</guid>
+        
+        <category>android</category>
+        
+        <category>RecyclerView</category>
+        
+        <category>loadmore</category>
+        
+        <category>ScrollView</category>
+        
+        
+        <category>android</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Android 使用RecyclerView实现横向滑动</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;有个需求，实现类似GalleryView左右滑动功能，刚开始打算用HorizontalScrollView嵌套GridView实现，但发现这弊端太多了,Adapter功能基本废了…果断抛弃。&lt;/p&gt;
+
+&lt;p&gt;至于为什么不用GalleryView实现，呵呵，谁用谁知道！&lt;/p&gt;
+
+&lt;p&gt;后来搜了一下发现Google 在Android L中加入了RecyclerView,可通过引入support-v7包在低版本中使用，下面讲一下初次体验。&lt;/p&gt;
+
+&lt;h2 id=&quot;support-v7jar&quot;&gt;引入Support-v7.jar包&lt;/h2&gt;
+&lt;p&gt;Gradle 导入&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;dependencies {
+    //省略其他引入....
+ 
+    //在build.gradle加上这一句就可以，很方便有木有
+    compile &#39;com.android.support:recyclerview-v7:+&#39;
+ 
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;至于其他环境，自己到sdk里找jar包吧…懒…&lt;/p&gt;
+
+&lt;h2 id=&quot;xml&quot;&gt;xml布局&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.v7.widget.RecyclerView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:tools=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/tools&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/recycler_view&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;activity&quot;&gt;Activity代码&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//必须设置LinearlayoutManager,不然无法用&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;LinearLayoutManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+ 
+&lt;span class=&quot;c1&quot;&gt;//设置水平方向滑动，在xml设置不生效&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOrientation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LinearLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;HORIZONTAL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+&lt;span class=&quot;n&quot;&gt;recycleView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+&lt;span class=&quot;c1&quot;&gt;//设置适配器，跟ListView和gridView一样&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;recycleView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;adapter&quot;&gt;Adapter代码&lt;/h2&gt;
+&lt;p&gt;跟ListView 和 GridView 的BaseAdapter有所不同，RecyclerView.Adapter直接复用的是Holder,而并非View.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PersonAdapter&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PersonAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;{&lt;/span&gt;  
+ 
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LayoutInflater&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mInflater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mDatas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+ 
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;GalleryAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datats&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
+        &lt;span class=&quot;n&quot;&gt;mDatas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datats&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  
+ 
+    &lt;span class=&quot;c1&quot;&gt;//继承RecyclerView.ViewHolder&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Holder&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;  
+ 
+        &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+        &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+ 
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
+            &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
+            &lt;span class=&quot;c1&quot;&gt;//初始化item&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xxxx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xxxx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;          
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  
+ 
+    &lt;span class=&quot;c1&quot;&gt;//获取总条目，相当于BaseAdapter里getCount&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; 
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getItemCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt; 
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mDatas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;  
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  
+ 
+    &lt;span class=&quot;cm&quot;&gt;/** 
+     * 创建ViewHolder 
+     */&lt;/span&gt; 
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; 
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreateViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
+        &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;inflate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;xx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;  
+            &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
+ 
+        &lt;span class=&quot;n&quot;&gt;Holder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
+ 
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  
+ 
+    &lt;span class=&quot;cm&quot;&gt;/** 
+     * 设置值 ,相当于getView()
+     */&lt;/span&gt; 
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; 
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onBindViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
+ 
+        &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mDatas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;  
+        &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mDatas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  
+ 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;遇到的问题&lt;/h2&gt;
+&lt;p&gt;NullPointException&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;NullPointerException&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;support&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;v7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onMeasure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1694&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16497&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;measureChildWithMargins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5125&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;出现这异常，主要因为一开始我没给他配置LinearLayoutManager,解决方法：&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//可以看上面的Activity代码&lt;/span&gt;
+ 
+&lt;span class=&quot;n&quot;&gt;mLayoutManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;recycleView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Recycleview notifyDataSetChanged() IllegalStateException&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;IllegalStateException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Cannot&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;computing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scrolling&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;support&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;v7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;assertNotInLayoutOrScroll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1462&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;support&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;v7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$RecyclerViewDataObserver&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2982&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;support&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;v7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;widget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$AdapterDataObservable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;notifyChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7493&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Stackoverflow上解决方法
+&lt;a href=&quot;http://stackoverflow.com/questions/27070220/recycleview-notifydatasetchanged-illegalstateexception&quot;&gt;猛击我，懒得贴代码&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;结语&lt;/h2&gt;
+
+&lt;p&gt;大体上跟ListView，GridView使用差不多，再也不用担心横向滑动了&lt;/p&gt;
+</description>
+        
+          <description>&lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;有个需求，实现类似GalleryView左右滑动功能，刚开始打算用HorizontalScrollView嵌套GridView实现，但发现这弊端太多了,Adapter功能基本废了…果断抛弃。&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 17 Jan 2015 00:00:00 +0800</pubDate>
+        <link>http://howedeng.github.io/blog/android-recyclerview-horizontal-scroll/</link>
+        <guid isPermaLink="true">http://howedeng.github.io/blog/android-recyclerview-horizontal-scroll/</guid>
+        
+        <category>android</category>
+        
+        <category>RecyclerView</category>
+        
+        <category>GalleryView</category>
+        
+        <category>ScrollView</category>
+        
+        
+        <category>android</category>
+        
+      </item>
+      
+    
+  </channel>
+</rss>
