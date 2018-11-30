@@ -1,7 +1,7 @@
-title: App Hack
-description: Android / IOS
+title: "史蒂芬软件站"
+description: "软件改变世界"
 
-url: http://howedeng.github.io
+url: http://www.sdfen.com
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
@@ -9,23 +9,20 @@ permalink: blog/:title/
 markdown: kramdown
 highlighter: rouge
 gems: [jekyll-paginate]
-paginate: 10
+paginate: 5
 
 navigation:
- - title: Home
+ - title: "首页"
    url: /index.html
- - title: Android
-   url: /category_android
- - title: Apple
-   url: /category_apple
- - title: Html
-   url: /category_html
+ - title: About
+   url: /about
+ - title: Contact
+   url: /contact
 
 social:
-   github: howedeng
-  #  twitter: brianmaierjr
-  #  facebook: brianmaierjr
-   email: howejee@gmail.com
+   github: brianmaierjr
+   twitter: brianmaierjr
+   facebook: brianmaierjr
+   email: brimaidesigns@gmail.com
 
 google_analytics: "UA-58263416-1"
-date_format: "%Y-%m-%d"

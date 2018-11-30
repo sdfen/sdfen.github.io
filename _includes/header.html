@@ -1,25 +1,28 @@
-<div class="header">
+ <div class="header">
 
-    <div class="container">
-        <div class="blur"></div>
-
-        <nav class="nav-collapse">
-            <ul class="noList">
-                {% for link in site.navigation %}
-                  {% assign current = nil %}
-                  {% if page.url contains link.url %}
-                    {% assign current = 'current' %}
-                  {% endif %}
-                <li class="element {% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
-                    <a href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
-                </li>
-                {% endfor %}
-                <!-- <li> <a href="https://github.com/brianmaierjr/long-haul" target="_blank">GitHub</a></li> -->
-            </ul>
-        </nav>
-
-
-        <h1 class="logo"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-
+    <a class="logo" href="{{ site.baseurl }}" style="background-image: url('/assets/img/logo.jpg')">史蒂芬</a>
+    
+    <h1 class="title">{{ site.title }}</h1>
+    <h2 class="description">{{ site.description }}</h2>
+    <div class="navs">
+        {% for link in site.navigation %}
+            {% assign current = nil %}
+            {% if page.url contains link.url %}
+                {% assign current = 'current' %}
+            {% endif %}
+            <a href="{{ link.url | prepend: site.baseurl }}" class="{{ current }}">{{ link.title }}</a>
+            {% if forloop.last %}
+                
+            {% else %}
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+            {% endif %}
+            
+        {% endfor %}
+        
+            
+        
     </div>
-</div><!-- end .header -->
+
+
+    
+ </div><!-- end .header -->

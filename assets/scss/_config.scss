@@ -29,7 +29,7 @@ $primary-color: #333;
 $secondary-color: #233E5B;
 $tertiary-color: #aaa;
 $link-color: $primary-color;
-$background-color: #666;
+$background-color: $primary-color;
 
 $bad-color: $red; // Bad color for errors, validation etc.
 $good-color: $green; // Good color for success etc.
@@ -37,10 +37,6 @@ $info-color: $blue; // Good color for success etc.
 $warning-color: $orange; // Good color for success etc.
 $subtle-color: $grey; // Subtle color for subtle text
 
-// Color posts
-$posts_title_color: #444444;
-$posts_title_hover_color: lighten(black,30%);
-$posts_description_color: rgba(68, 68, 68, .6);
 
 /***************
 CONSISTENT SETTINGS
@@ -56,5 +52,5 @@ $line-height: 44px; // Consistent height for buttons, inputs etc.
 TYPE SETTINGS
 ***************/
 
-$sans-serif: "Lato","Yahei", Helvetica, Arial, sans-serif;
-$serif: "Lato", "Yahei", Georgia, Times, serif;
+$sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
+$serif: "PT Serif", Georgia, Times, serif;
