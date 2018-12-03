@@ -12,12 +12,12 @@ gems: [jekyll-paginate]
 paginate: 5
 
 navigation:
- - title: "首页"
+ - title: "Home"
    url: /index.html
- - title: About
-   url: /about
- - title: Contact
-   url: /contact
+ - title: Mac
+   url: /mac
+ - title: Window
+   url: /window
 
 social:
    github: sdfen
