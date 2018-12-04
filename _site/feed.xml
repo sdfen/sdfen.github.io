@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>史蒂芬软件站</title>
+    <title>苏打粉软件分享</title>
     <description>软件改变世界</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Dec 2018 09:30:16 +0800</pubDate>
-    <lastBuildDate>Sat, 01 Dec 2018 09:30:16 +0800</lastBuildDate>
+    <pubDate>Tue, 04 Dec 2018 09:57:24 +0800</pubDate>
+    <lastBuildDate>Tue, 04 Dec 2018 09:57:24 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       
