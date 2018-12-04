@@ -761,6 +761,19 @@ dd {
 .post ol ol {
   margin: 0; }
 
+.post-content {
+  line-height: 25px;
+  font-size: 20px;
+  display: block; }
+
+.post-content.hasCover {
+  min-height: 100px; }
+
+.post-content img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px; }
+
 /***************
 PAGE STYLES
 ***************/
@@ -845,7 +858,8 @@ POST STYLING
 .post .postTitle {
   text-align: center;
   margin-top: 2rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  font-size: 2.2em; }
 .post blockquote {
   clear: both;
   margin: 2.5em 0;
@@ -895,7 +909,8 @@ POST STYLING
   margin-right: .45rem; }
 .post .featuredImage {
   position: relative;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  text-align: center; }
   .post .featuredImage img {
     margin-bottom: 0; }
 
@@ -1089,7 +1104,8 @@ POST LIST STYLING
     margin: 2rem auto 1em; }
   .post .featuredImage {
     position: relative;
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    text-align: center; }
     .post .featuredImage:before {
       background: white;
       content: "";

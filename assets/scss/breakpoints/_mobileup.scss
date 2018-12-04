@@ -157,6 +157,26 @@ dd {
   margin: 0;
 }
 
+.post-content{
+	line-height:25px;
+
+	font-size: 20px;
+	display:block;
+
+}
+
+.post-content.hasCover{
+	min-height: 100px;
+}
+
+.post-content img{
+	width: 100px;
+	height: 100px;
+	margin-right: 10px;
+
+
+}
+
 
 /***************
 PAGE STYLES
@@ -270,6 +290,7 @@ POST STYLING
 		text-align: center;
 		margin-top: 2rem;
 		margin-bottom: 1rem;
+		font-size: 2.2em;
 		
 	}
 
@@ -343,7 +364,7 @@ POST STYLING
 	.featuredImage {
 		position: relative;
 		margin-top: 2rem;
-
+		text-align:center;
 		img {
 			margin-bottom: 0;
 		}

@@ -5,81 +5,55 @@
     <description>软件改变世界</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Dec 2018 09:57:24 +0800</pubDate>
-    <lastBuildDate>Tue, 04 Dec 2018 09:57:24 +0800</lastBuildDate>
+    <pubDate>Tue, 04 Dec 2018 12:36:23 +0800</pubDate>
+    <lastBuildDate>Tue, 04 Dec 2018 12:36:23 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       
       <item>
-        <title>Example Post Formatting</title>
-        <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;C&lt;/span&gt;urabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.&lt;/p&gt;
+        <title>Paste 2.4.1 Mac中文破解版</title>
+        <description>&lt;p&gt;description: “对于需要从事内容创作的人群来说，无论是设计师、撰稿人还是开发者，每天最常见的操作之一可能就是「复制 - 粘贴」了。显然，每一次复制都会覆盖掉前一次里剪切板中的内容，大大降低了我们的工作效率。因此有许多第三方软件，都可以实现剪切板内容的批量存储和调用，如 ClipMemu、LaunchBar 等。不过，第三方剪切板工具对于真正有需要的人，每天要见面的次数实在太多，有没有一款好用又好看的呢？”
+长期用 Mac 进行办公活动的你，是否好奇整个工作时间究竟是怎么流逝的？如果你真想知道自己每天在 Mac 平台各个应用或网页里流连的时间，那么自动追踪计时器 Qbserve 会是一个好帮手。&lt;/p&gt;
 
-&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
+&lt;p&gt;Qbserve 可以识别用户正在使用的不同应用和在浏览器中访问的不同网站，并基于庞大的数据库匹配，将这些活动按照 Productive（效率）、Neutral（中立）和 Distracting（分心）三种类别进行统计。所有的数据都保存在本地，不用太担心隐私问题。&lt;/p&gt;
 
-&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
+&lt;p&gt;统计的数据会通过三种不同的方式显示出来，除了饼图和分类详情外，应用还可以按照时间段来显示你的活动记录，你可以看出你在那个时段效率更高，而在哪个时段更容易分心去干别的。更有趣的是，应用常驻在 Dock 栏的六边形图标的外围颜色会根据活动时长发生变化，常驻通知栏的图标则会实时显示「生产」活动的时间占比。&lt;/p&gt;
 
-&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
+&lt;h3 id=&quot;首先你得有一张好看的脸&quot;&gt;首先，你得有一张好看的脸……&lt;/h3&gt;
+&lt;p&gt;Paste 就是为这个目标而生的——做一个好用又好看的剪切板管理器。所以我们先来看一下它的脸。&lt;/p&gt;
 
-&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/mac/paste/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
+&lt;p&gt;可以看到，Paste 在剪切板界面采用了卡片式的设计风格，每一段保存的剪切内容都以独立的卡片形式存在，并显示相应的应用来源和内容预览。在应用来源这里，还会根据应用的图标颜色，提取出主色彩作为填充色。整体上，无论是设计风格、动画效果，都仿佛是系统原生功能一般，融合度非常之高。&lt;/p&gt;
 
-&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
+&lt;p&gt;在这里插一句吐嘈：Mac 系统的顔值高，不仅仅在于第三方开发者的设计感，更在于整个生态圈的统一标准。试想，在 Windows 下，每个程序图标的尺寸、风格、类型都不径相同，即使 Paste 有 Windows 版，也不可能做到如此顔值，这种美，是一种 United Beauty，需要系统和第三方应用程序的共同遵守和努力才能做到的。&lt;/p&gt;
 
-&lt;blockquote&gt;Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.&lt;/blockquote&gt;
+&lt;h3 id=&quot;看完脸我们再来谈谈活好不好&quot;&gt;看完脸，我们再来谈谈「活」好不好&lt;/h3&gt;
+&lt;p&gt;好了，长得再帅也得活好对不对，这方面 Paste 能满足你吗？&lt;/p&gt;
 
-&lt;p&gt;Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.&lt;/p&gt;
+&lt;p&gt;首先，Paste 和大多数同类软件一样，支持记录的文件类型非常丰富，文字、图片、文件、富文本、链接等等都一应俱全，最方便的是通过卡片式的预览，可以直观清晰地获知每个内容的大概情况。另外，Paste 的剪切记录是存储在硬盘上的，这意味着即使你重启了电脑，整个剪切板的内容依然不会丢失。&lt;/p&gt;
 
-&lt;h2 id=&quot;unordered-list&quot;&gt;Unordered List&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;List Item&lt;/li&gt;
-  &lt;li&gt;Longer List Item
-    &lt;ul&gt;
-      &lt;li&gt;Nested List Item&lt;/li&gt;
-      &lt;li&gt;Nested Item&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;List Item&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;除此之外，首次启用 Paste 时，以及在 Paste 的偏好设置里，你可以设定默认保存的剪切历史，从「10 - 50 - 100 - 500 - 无限」共有五档可选，不过如果设置为无限，会有性能预警提示。除此之外，「Enable Direct Paste」选项允许你从剪切板回到当前应用程序时，直接在当前光标处插入被选择的内容，而不用你再次按下「Command + V」。「Strip formatted text styles」则允许你在保存剪切板记录时，将富文本内容的样式去除，仅保留文字。&lt;/p&gt;
 
-&lt;h2 id=&quot;ordered-list&quot;&gt;Ordered List&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;List Item&lt;/li&gt;
-  &lt;li&gt;Longer List Item
-    &lt;ol&gt;
-      &lt;li&gt;Nested OL Item&lt;/li&gt;
-      &lt;li&gt;Another Nested Item&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;List Item&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/mac/paste/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;definition-list&quot;&gt;Definition List&lt;/h2&gt;
-&lt;dl&gt;
-  &lt;dt&gt;Coffee&lt;/dt&gt;
-  &lt;dd&gt;Black hot drink&lt;/dd&gt;
-  &lt;dt&gt;Milk&lt;/dt&gt;
-  &lt;dd&gt;White cold drink&lt;/dd&gt;
-&lt;/dl&gt;
+&lt;p&gt;另一个必须要提的是：Paste 的搜索功能非常好用。你可以直接输入文字，它会从所有文本类型的剪切历史中查找。另外，你也可以直接输入想筛选的剪切类型，甚至可以加上应用来源，例如搜索「Image Sketch」，就会筛选出所有从 Sketch 中保存到剪切板的图片文件。&lt;/p&gt;
 
-&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/mac/paste/3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.&lt;/p&gt;
+&lt;p&gt;除了这些以外，Paste 还支持自定义快捷键，排除一些隐私敏感的第三方程序（如 Keychain、1Password）等一些常规功能。总的来说，Paste 做得不错，据悉，开发者会持续改进完善 Paste，像「剪切板内容合并」功能不会等太久，不过我也希望后续除了卡片视图外，再加入一些更紧凑高效的视图模式，或者引入三指上滑卡片移除该剪切内容，会让 Paste 更加好用。&lt;/p&gt;
 
-&lt;p&gt;Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt;
-
-&lt;p&gt;Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.&lt;/p&gt;
-
-&lt;p&gt;Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;**&lt;em&gt;&lt;a href=&quot;https://u18949100.ctfile.com/fs/18949100-323030298&quot;&gt;下载地址&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;**&lt;/p&gt;
 </description>
         
-          <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;C&lt;/span&gt;urabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.&lt;/p&gt;
+          <description>&lt;p&gt;description: “对于需要从事内容创作的人群来说，无论是设计师、撰稿人还是开发者，每天最常见的操作之一可能就是「复制 - 粘贴」了。显然，每一次复制都会覆盖掉前一次里剪切板中的内容，大大降低了我们的工作效率。因此有许多第三方软件，都可以实现剪切板内容的批量存储和调用，如 ClipMemu、LaunchBar 等。不过，第三方剪切板工具对于真正有需要的人，每天要见面的次数实在太多，有没有一款好用又好看的呢？”
+长期用 Mac 进行办公活动的你，是否好奇整个工作时间究竟是怎么流逝的？如果你真想知道自己每天在 Mac 平台各个应用或网页里流连的时间，那么自动追踪计时器 Qbserve 会是一个好帮手。&lt;/p&gt;
 
 </description>
         
-        <pubDate>Mon, 15 Dec 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/blog/example-post-formatting/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/example-post-formatting/</guid>
+        <pubDate>Tue, 04 Dec 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/mac-qbserve-1.8/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/mac-qbserve-1.8/</guid>
         
         
       </item>
@@ -87,152 +61,33 @@
     
       
       <item>
-        <title>Featured Image</title>
-        <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;L&lt;/span&gt;orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.&lt;/p&gt;
+        <title>Qbserve 1.8 Mac破解版</title>
+        <description>&lt;p&gt;长期用 Mac 进行办公活动的你，是否好奇整个工作时间究竟是怎么流逝的？如果你真想知道自己每天在 Mac 平台各个应用或网页里流连的时间，那么自动追踪计时器 Qbserve 会是一个好帮手。&lt;/p&gt;
 
-&lt;p&gt;Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omnium commissaire ronde van vlaanderen horizontally stiff but vertically compliant muur, valkenberg jens paris-roubaix. Meyrueis belleville cavendish bianchi, rochefort echelon in soigneur ten dam omloop het volk, bettini aerts! Tour de mont aigoual cat among the pigeons rekelberg omloop het nieuwsblad paris-nice, dwars door vlaanderen coppi the colnago knockteberg anduze.&lt;/p&gt;
+&lt;p&gt;Qbserve 可以识别用户正在使用的不同应用和在浏览器中访问的不同网站，并基于庞大的数据库匹配，将这些活动按照 Productive（效率）、Neutral（中立）和 Distracting（分心）三种类别进行统计。所有的数据都保存在本地，不用太担心隐私问题。&lt;/p&gt;
 
-&lt;p&gt;Kaperij lanterne rouge musette rund um koln bruges thor smash, geraardsbergen riis petacchi molteni pedaling squares. Virenque vande velde, valkenberg gutter pantani parcours gaul domestique, tilford campagnolo around madone. Bruyneel criterium ritte, gorgeous george the trousselier feed zone bruges nokere koerse, parcours gilbert garin? Anquetil valkenberg bettini cat among the pigeons.&lt;/p&gt;
+&lt;p&gt;统计的数据会通过三种不同的方式显示出来，除了饼图和分类详情外，应用还可以按照时间段来显示你的活动记录，你可以看出你在那个时段效率更高，而在哪个时段更容易分心去干别的。更有趣的是，应用常驻在 Dock 栏的六边形图标的外围颜色会根据活动时长发生变化，常驻通知栏的图标则会实时显示「生产」活动的时间占比。&lt;/p&gt;
 
-&lt;p&gt;Campagnolo the hors delai de wolf as the toto turns venga venga venga, sanchez nys. Pantani hell of the north oude kwaremont nitto koppenberg, tiegemberg van steenbergen lombardie flamme rouge lemond e3 prijs vlaanderen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/mac/qbserve/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Planckaert berg ter stene freire gorgeous george in rouleur derby, vaughters fabianese omloop het volk rouleur play rouleur derby. Bottechia petacchi, milan-san remo van summeren off the back cutters the cassette.&lt;/p&gt;
+&lt;p&gt;不过纵使应用自带了强大的数据库自动识别和分类你在使用的应用，但是仍然有很多应用和网页是它无法正确识别的，而对于有些人来说，使用微博和 Twitter 就是他们的日常工作，所以被识别为「分心」也是不对的。&lt;/p&gt;
 
-&lt;p&gt;Nyvelocity pyrenees vande velde merckx. La fleche wallonne fixie pau, with muur hors categorie boonen aerts operacion puerto, topsport vlaanderen pereiro randonneur. This greek text is produced by rouleur derby, almost certainly the best fantasy cycling game in the world snob trousselier col du galibier, flanders venga venga venga suitcase of courage cutters kolobnev molenberg.&lt;/p&gt;
+&lt;p&gt;对于 Qbserve 无法匹配识别的应用与活动，用户都可以手动对它们进行分类，当然用户可以对 Qbserve 归类好的活动重新进行修改归属操作。 此外，包括监控时间段、长时间专注提醒等功能，都允许用户自行设置。Qbserve 唯一的不足在于所有的数据不支持导出，用户无法进行二次分析。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/mac/qbserve/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果你需要统计分析自己在 Mac 上消耗的时间，Qbserve 是一个极佳的选择。自动记录，即时统计，省时省力身心&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;**&lt;em&gt;&lt;a href=&quot;https://u18949100.ctfile.com/fs/18949100-323012043&quot;&gt;下载地址&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;**&lt;/p&gt;
 </description>
         
-          <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;L&lt;/span&gt;orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 14 Dec 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/blog/featured-image/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/featured-image/</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Post With A Code Snippet</title>
-        <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;Y&lt;/span&gt;ou'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes! To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
+          <description>&lt;p&gt;长期用 Mac 进行办公活动的你，是否好奇整个工作时间究竟是怎么流逝的？如果你真想知道自己每天在 Mac 平台各个应用或网页里流连的时间，那么自动追踪计时器 Qbserve 会是一个好帮手。&lt;/p&gt;
 
 </description>
         
-          <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;Y&lt;/span&gt;ou'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes! To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sat, 13 Dec 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/blog/code-snippet/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/code-snippet/</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Figure With A Caption</title>
-        <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;L&lt;/span&gt;orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.&lt;/p&gt;
-
-&lt;p&gt;Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omnium commissaire ronde van vlaanderen horizontally stiff but vertically compliant muur, valkenberg jens paris-roubaix. Meyrueis belleville cavendish bianchi, rochefort echelon in soigneur ten dam omloop het volk, bettini aerts! Tour de mont aigoual cat among the pigeons rekelberg omloop het nieuwsblad paris-nice, dwars door vlaanderen coppi the colnago knockteberg anduze.&lt;/p&gt;
-
-&lt;figure&gt;
-	&lt;img src=&quot;/assets/img/touring.jpg&quot; alt=&quot;&quot; /&gt; 
-	&lt;figcaption&gt;Fig1. - This is an example figcaption&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/img/touring.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Fig1. - This is an example figcaption&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Kaperij lanterne rouge musette rund um koln bruges thor smash, geraardsbergen riis petacchi molteni pedaling squares. Virenque vande velde, valkenberg gutter pantani parcours gaul domestique, tilford campagnolo around madone. Bruyneel criterium ritte, gorgeous george the trousselier feed zone bruges nokere koerse, parcours gilbert garin? Anquetil valkenberg bettini cat among the pigeons.&lt;/p&gt;
-
-&lt;p&gt;Campagnolo the hors delai de wolf as the toto turns venga venga venga, sanchez nys. Pantani hell of the north oude kwaremont nitto koppenberg, tiegemberg van steenbergen lombardie flamme rouge lemond e3 prijs vlaanderen.&lt;/p&gt;
-
-&lt;p&gt;Planckaert berg ter stene freire gorgeous george in rouleur derby, vaughters fabianese omloop het volk rouleur play rouleur derby. Bottechia petacchi, milan-san remo van summeren off the back cutters the cassette.&lt;/p&gt;
-
-&lt;p&gt;Nyvelocity pyrenees vande velde merckx. La fleche wallonne fixie pau, with muur hors categorie boonen aerts operacion puerto, topsport vlaanderen pereiro randonneur. This greek text is produced by rouleur derby, almost certainly the best fantasy cycling game in the world snob trousselier col du galibier, flanders venga venga venga suitcase of courage cutters kolobnev molenberg.&lt;/p&gt;
-</description>
-        
-          <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;L&lt;/span&gt;orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Fri, 12 Dec 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/blog/figure-with-caption/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/figure-with-caption/</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Image in Post</title>
-        <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;L&lt;/span&gt;orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.&lt;/p&gt;
-
-&lt;p&gt;Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omnium commissaire ronde van vlaanderen horizontally stiff but vertically compliant muur, valkenberg jens paris-roubaix. Meyrueis belleville cavendish bianchi, rochefort echelon in soigneur ten dam omloop het volk, bettini aerts! Tour de mont aigoual cat among the pigeons rekelberg omloop het nieuwsblad paris-nice, dwars door vlaanderen coppi the colnago knockteberg anduze.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/touring.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Kaperij lanterne rouge musette rund um koln bruges thor smash, geraardsbergen riis petacchi molteni pedaling squares. Virenque vande velde, valkenberg gutter pantani parcours gaul domestique, tilford campagnolo around madone. Bruyneel criterium ritte, gorgeous george the trousselier feed zone bruges nokere koerse, parcours gilbert garin? Anquetil valkenberg bettini cat among the pigeons.&lt;/p&gt;
-
-&lt;p&gt;Campagnolo the hors delai de wolf as the toto turns venga venga venga, sanchez nys. Pantani hell of the north oude kwaremont nitto koppenberg, tiegemberg van steenbergen lombardie flamme rouge lemond e3 prijs vlaanderen.&lt;/p&gt;
-
-&lt;p&gt;Planckaert berg ter stene freire gorgeous george in rouleur derby, vaughters fabianese omloop het volk rouleur play rouleur derby. Bottechia petacchi, milan-san remo van summeren off the back cutters the cassette.&lt;/p&gt;
-
-&lt;p&gt;Nyvelocity pyrenees vande velde merckx. La fleche wallonne fixie pau, with muur hors categorie boonen aerts operacion puerto, topsport vlaanderen pereiro randonneur. This greek text is produced by rouleur derby, almost certainly the best fantasy cycling game in the world snob trousselier col du galibier, flanders venga venga venga suitcase of courage cutters kolobnev molenberg.&lt;/p&gt;
-</description>
-        
-          <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;L&lt;/span&gt;orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 11 Dec 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/blog/image-in-post/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/image-in-post/</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Test Post</title>
-        <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;L&lt;/span&gt;orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.&lt;/p&gt;
-
-&lt;p&gt;Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omnium commissaire ronde van vlaanderen horizontally stiff but vertically compliant muur, valkenberg jens paris-roubaix. Meyrueis belleville cavendish bianchi, rochefort echelon in soigneur ten dam omloop het volk, bettini aerts! Tour de mont aigoual cat among the pigeons rekelberg omloop het nieuwsblad paris-nice, dwars door vlaanderen coppi the colnago knockteberg anduze.&lt;/p&gt;
-
-&lt;p&gt;Kaperij lanterne rouge musette rund um koln bruges thor smash, geraardsbergen riis petacchi molteni pedaling squares. Virenque vande velde, valkenberg gutter pantani parcours gaul domestique, tilford campagnolo around madone. Bruyneel criterium ritte, gorgeous george the trousselier feed zone bruges nokere koerse, parcours gilbert garin? Anquetil valkenberg bettini cat among the pigeons.&lt;/p&gt;
-
-&lt;p&gt;Campagnolo the hors delai de wolf as the toto turns venga venga venga, sanchez nys. Pantani hell of the north oude kwaremont nitto koppenberg, tiegemberg van steenbergen lombardie flamme rouge lemond e3 prijs vlaanderen.&lt;/p&gt;
-
-&lt;p&gt;Planckaert berg ter stene freire gorgeous george in rouleur derby, vaughters fabianese omloop het volk rouleur play rouleur derby. Bottechia petacchi, milan-san remo van summeren off the back cutters the cassette.&lt;/p&gt;
-
-&lt;p&gt;Nyvelocity pyrenees vande velde merckx. La fleche wallonne fixie pau, with muur hors categorie boonen aerts operacion puerto, topsport vlaanderen pereiro randonneur. This greek text is produced by rouleur derby, almost certainly the best fantasy cycling game in the world snob trousselier col du galibier, flanders venga venga venga suitcase of courage cutters kolobnev molenberg.&lt;/p&gt;
-</description>
-        
-          <description>&lt;p class=&quot;intro&quot;&gt;&lt;span class=&quot;dropcap&quot;&gt;L&lt;/span&gt;orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 10 Dec 2014 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/blog/test-post/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/test-post/</guid>
+        <pubDate>Tue, 04 Dec 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/mac-paste/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/mac-paste/</guid>
         
         
       </item>
